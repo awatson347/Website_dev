@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	#myCanvas{
+		background: #ddd;
+		border-width: 24px;
+		border-color: #e01ce0;
+	}
+</style>
+	<title>Canvas</title>
+	
+</head>
+<body>
+	<canvas id="myCanvas" width="300" height="300" ></canvas>
+	<script>
+	var c = document.getElementById("myCanvas");
+	var ctx=c.getContext("2d");
+
+	//Rectangle
+	ctx.fillStyle="red";
+	ctx.fillRect(75,75, 150,150);
+
+	// Line
+	ctx.moveTo(0,0)
+	ctx.lineTo(250, 100);
+	ctx.stroke();
+
+	//Circle
+	ctx.beginPath();
+	ctx.arc(150,150,60,0,2*Math.PI);
+	ctx.fillStyle='green';
+	ctx.fill();
+	ctx.lineWidth=4;
+	ctx.strokeStyle='red';
+	ctx.stroke();
+	</script>
+
+</body>
+</html>

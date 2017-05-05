@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Github Profile Finder</title>
+</head>
+<body>
+<div id="profile"></div>
+<script >
+	function getProfile(){
+		var username ='bradtraversy';
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function(){
+			if (xhttp.readyState == 4 && xhttp.status == 200) {
+				var user = JSON.parse(xhttp.responseText);
+				document.getElementById('profile'). innerHTML = user.email;
+			}
+		}
+		xhttp.open('GET' , 'https://api.github.com/users/' + username, true);
+		xhttp.send();
+	}
+	getProfile();
+		
+
+
+</script>
+
+</body>
+</html>

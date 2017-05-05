@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            background: #ffc400;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        
+        #holder {
+            position: relative;
+            width: 330px;
+            height: 60px;
+            margin: 30% auto 0;
+            text-align: right;
+        }
+        
+        #border {
+            display: inline-block;
+            height: 2px;
+            margin-top: 29px;
+            width: 300px;
+            background: linear-gradient(90deg, white 50%, transparent 50%), linear-gradient(90deg, white 50%, transparent 50%), linear-gradient(0deg, white 20%, transparent 50%), linear-gradient(0deg, white 50%, transparent 50%);
+            background-repeat: repeat-x;
+            background-size: 15px 4px;
+            background-position: 0px 0px;
+            animation: border-move 6s infinite linear;
+        }
+        
+        @keyframes border-move {
+            0% {
+                background-position: 0px 0px;
+            }
+            100% {
+                background-position: 300px 0px;
+            }
+        }
+        
+        #drag {
+            z-index: 200;
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            cursor: pointer;
+        }
+        
+        #cover {
+            z-index: 199;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background: #ffc400;
+            width: 0px;
+            height: 60px;
+        }
+        
+        #drop {
+            z-index: 100;
+            display: inline-block;
+            position: absolute;
+            top: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="holder">
+        <div id="border"></div>
+        <img id="drag" src="img/drag.png">
+        <img id="drop" src="img/drop.png">
+        <div id="cover"></div>
+    </div>
+
+    <script>
+        var offsets = document.getElementById('holder').getBoundingClientRect();
+        var left = offsets.left;
+        var cover = document.getElementById('cover');
+        var drag = document.getElementById('drag');
+        drag.addEventListener('mousedown', mouseDown, false);
+        window.addEventListener('mouseup', mouseUp, false);
+
+        function mouseUp(e) {
+            window.removeEventListener('mousemove', divMove, true);
+            if (e.clientX - left > 280) {
+                window.location.href = 'https://www.google.com';
+            }
+        }
+
+        function mouseDown(e) {
+            window.addEventListener('mousemove', divMove, true);
+        }
+
+        function divMove(e) {
+            if (e.clientX >= left && e.clientX <= (left + 320)) {
+                drag.style.left = (e.clientX - left) + 'px';
+                cover.style.width = (e.clientX - left) + 'px';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

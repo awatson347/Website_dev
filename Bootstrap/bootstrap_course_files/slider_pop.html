@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/prettyPhoto.css">
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+	
+</head>
+<body>
+<div class="container">
+
+	
+<div id="slider" class="carousel slide col-sm-12" data-ride="carousel">
+
+	<ol class="carousel-indicators">
+		<li data-target="#slider" data-slide-to="0" class="active"></li>
+		<li data-target="#slider" data-slide-to="1"></li>
+
+	</ol>
+
+	<div class="carousel-inner">
+
+		<div class="item active">
+
+			<a rel="prettyPhoto[gallery1]" href="http://youtu.be/NXxr0zOriQE"  title="This is the title attribut">
+				
+				<img class="img-responsive" src="http://placehold.it/1280x700&text=Video" alt="Piture 1">
+
+			</a>
+			
+
+		</div><!--item 1-->
+
+
+		<div class="item">
+			
+			<a rel="prettyPhoto[gallery1]" href="http://placehold.it/500x500" title="This is the title attribut">
+				
+				<img class="img-responsive" src="http://placehold.it/1280x700&text=Picture" alt="Piture 1">
+
+			</a>
+
+
+		</div><!--item 2-->
+		
+		<div class="item">
+			
+			<a rel="prettyPhoto[gallery1]" href="http://placehold.it/500x500" title="This is the title attribut">
+				
+				<img class="img-responsive" src="http://placehold.it/1280x700&text=Picture" alt="Piture 1">
+
+			</a>
+
+
+		</div><!--item 3-->
+		
+
+
+	</div><!--inner-->
+
+
+	<a class="left carousel-control" href="#slider" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+
+	<a class="right carousel-control" href="#slider" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+
+
+
+
+	
+
+</div><!--slider-->
+
+
+
+
+
+
+
+
+
+
+</div><!--container-->
+
+<script>
+	
+$(document).ready(function(){
+
+$("[rel^='prettyPhoto']").prettyPhoto();
+
+
+});
+
+
+
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
