@@ -1,6 +1,30 @@
-var account = {
-	balance: 0
-};
+var accounts = [];
+
+// Account Object
+// balance
+// username
+
+// createAccount(account)
+// push onto accounts array
+// return account
+function createAccount(account){
+	accounts.push(account);
+	return account;
+}
+
+// getAccount(username)
+// find matching account using forEach
+function getAccount(username){
+	var matchedAccount;
+
+	accounts.forEach(function(account){
+		if (account.username=== username){
+			matchedAccount=account;
+		}
+	});
+	return matchedAccount;
+}
+
 
 //deposit(account, amount)
 function deposit (account, amount){
@@ -17,7 +41,30 @@ function withdraw (account, amount) {
 function getBalance(account){
 	return account.balance;
 }
-deposit(account, 14000);
-console.log(getBalance(account));
-withdraw(account, 200)
-console.log(getBalance(account));
+
+var alexsAccount = createAccount({
+	username:'Alex',
+	balance:70000
+
+});
+
+deposit(alexsAccount, 100);
+console.log(getBalance(alexsAccount));
+
+withdraw(alexsAccount, 130);
+console.log(getBalance(alexsAccount));
+
+var existingAccount = getAccount('Alex');
+console.log(getBalance(alexsAccount));
+
+var jensAccount=createAccount({
+	username: 'jen001',
+	balance: 12
+});
+
+console.log(accounts);
+
+var exitingJensAccount= getAccount('jen0001');
+console.log(exitingJensAccount);
+
+
