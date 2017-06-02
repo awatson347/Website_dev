@@ -59,12 +59,12 @@ console.log(getBalance(alexsAccount));
 
 var jensAccount=createAccount({
 	username: 'jen001',
-	balance: 12
+	balance: 1200
 });
 
 console.log(accounts);
 
-var exitingJensAccount= getAccount('jen0001');
+var exitingJensAccount= getAccount('jen001');
 console.log(exitingJensAccount);
 
 
